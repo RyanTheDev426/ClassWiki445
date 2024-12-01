@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Comments>
+	<Comment>
+		<ClassID>CSE445</ClassID>
+		<UserID>user1</UserID>
+		<CommentText>this class is hard</CommentText>
+		<Timestamp>2024-12-01T10:30:00</Timestamp>
+	</Comment>
+	<Comment>
+		<ClassID>CSE445</ClassID>
+		<UserID>user2</UserID>
+		<CommentText>great class, learned a lot</CommentText>
+		<Timestamp>2024-12-01T11:45:00</Timestamp>
+	</Comment>
+</Comments>

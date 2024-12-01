@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Classes>
+	<Class>
+		<ClassID>CSE445</ClassID>
+		<ClassName>Distributed Software Development</ClassName>
+	</Class>
+	<Class>
+		<ClassID>CSE310</ClassID>
+		<ClassName>Data Structures and Algorithms</ClassName>
+	</Class>
+	<Class>
+		<ClassID>CSE355</ClassID>
+		<ClassName>Theory of Computation</ClassName>
+	</Class>
+</Classes>

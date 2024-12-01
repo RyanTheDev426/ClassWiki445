@@ -3,9 +3,11 @@
 	<User>
 		<Username>user1</Username>
 		<Password>hashed_password1</Password>
+		<Role>Member</Role>
 	</User>
 	<User>
 		<Username>user2</Username>
 		<Password>hashed_password2</Password>
+		<Role>Staff</Role>
 	</User>
 </Users>
