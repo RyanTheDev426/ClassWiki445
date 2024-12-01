@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Users>
+	<User>
+		<Username>user1</Username>
+		<Password>hashed_password1</Password>
+	</User>
+	<User>
+		<Username>user2</Username>
+		<Password>hashed_password2</Password>
+	</User>
+</Users>
