@@ -16,9 +16,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeHours", "OfficeHours\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalPages", "MemberPage\FinalPages.csproj", "{3145224F-F1BF-4C2F-A4E9-7B6F35DE0F57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comments", "..\..\..\..\source\repos\Comments\Comments.csproj", "{8915060D-F7AB-41A9-826F-8D4410DD1073}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comments", "Comments\Comments.csproj", "{8915060D-F7AB-41A9-826F-8D4410DD1073}""
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityLib1", "..\..\..\..\source\repos\SecurityLib1\SecurityLib1.csproj", "{3DFDD31D-686A-4660-A690-BB27C430E5AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityLib1", "SecurityLib1\SecurityLib1.csproj", "{3DFDD31D-686A-4660-A690-BB27C430E5AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
