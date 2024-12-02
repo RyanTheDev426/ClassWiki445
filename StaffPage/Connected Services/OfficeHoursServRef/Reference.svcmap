@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="1b7f4679-d03a-4d73-ad49-43bc2f7f93a2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="4ae531ca-79e6-421b-b060-a6cfb36ab355" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="https://localhost:44398/OfficeHoursService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="OfficeHoursService.wsdl" MetadataType="Wsdl" ID="92272e48-60fa-4c6b-972a-a823642ae555" SourceId="1" SourceUrl="https://localhost:44398/OfficeHoursService.asmx?wsdl" />
-    <MetadataFile FileName="OfficeHoursService.disco" MetadataType="Disco" ID="f06eac9a-2d76-4770-aedc-06b4854e8ade" SourceId="1" SourceUrl="https://localhost:44398/OfficeHoursService.asmx?disco" />
+    <MetadataFile FileName="OfficeHoursService.wsdl" MetadataType="Wsdl" ID="a54d6a0a-d5b1-49b0-bab1-0889fca8094b" SourceId="1" SourceUrl="https://localhost:44398/OfficeHoursService.asmx?wsdl" />
+    <MetadataFile FileName="OfficeHoursService.disco" MetadataType="Disco" ID="2b0af071-8fba-423d-ab16-5752a4620aeb" SourceId="1" SourceUrl="https://localhost:44398/OfficeHoursService.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

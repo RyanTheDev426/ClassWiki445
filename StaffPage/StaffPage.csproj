@@ -53,6 +53,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -100,6 +102,14 @@
     <Content Include="About.aspx" />
     <Content Include="App_Data\Classes.xml" />
     <Content Include="App_Data\Staff.xml" />
+    <Content Include="ClassDetails.aspx" />
+    <None Include="Connected Services\OfficeHoursServRef\OfficeHoursService.disco" />
+    <None Include="Connected Services\OfficeHoursServRef\configuration91.svcinfo" />
+    <None Include="Connected Services\OfficeHoursServRef\configuration.svcinfo" />
+    <None Include="Connected Services\OfficeHoursServRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -149,6 +159,13 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Connected Services\OfficeHoursServRef\OfficeHoursService.wsdl" />
+    <Content Include="Connected Services\OfficeHoursServRef\StaffPage.OfficeHoursServRef.AddOfficeHoursResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\OfficeHoursServRef\StaffPage.OfficeHoursServRef.GetOfficeHoursResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -192,6 +209,17 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ClassDetails.aspx.cs">
+      <DependentUpon>ClassDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassDetails.aspx.designer.cs">
+      <DependentUpon>ClassDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\OfficeHoursServRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -232,7 +260,9 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
@@ -243,6 +273,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\OfficeHoursServRef\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

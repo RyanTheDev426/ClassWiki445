@@ -25,6 +25,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityLib1", "SecurityLib1\SecurityLib1.csproj", "{3DFDD31D-686A-4660-A690-BB27C430E5AE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaffPage", "StaffPage\StaffPage.csproj", "{688E430E-18B0-47C5-9635-3960217D1842}"
+	ProjectSection(ProjectDependencies) = postProject
+		{77618A5D-8741-498A-A465-3E66C80A6A61} = {77618A5D-8741-498A-A465-3E66C80A6A61}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
