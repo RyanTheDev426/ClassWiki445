@@ -1,50 +1,50 @@
 <OfficeHours>
   <OfficeHour>
-    <ProfessorName>g</ProfessorName>
-    <ProfessorTime>4</ProfessorTime>
-    <ProfessorLocation>g</ProfessorLocation>
-    <TAName>f</TAName>
-    <TATime>4</TATime>
-    <TALocation>f</TALocation>
+    <ProfessorName>Chen</ProfessorName>
+    <ProfessorTime>2PM-3PM</ProfessorTime>
+    <ProfessorLocation>Coor Hall</ProfessorLocation>
+    <TAName>Jiaxuan</TAName>
+    <TATime>3PM-4PM</TATime>
+    <TALocation>Coor Hall</TALocation>
   </OfficeHour>
   <OfficeHour>
-    <ProfessorName>gt</ProfessorName>
-    <ProfessorTime>7</ProfessorTime>
-    <ProfessorLocation>gg</ProfessorLocation>
-    <TAName>fe</TAName>
-    <TATime>9</TATime>
-    <TALocation>fw</TALocation>
+    <ProfessorName>Gordon</ProfessorName>
+    <ProfessorTime>2PM-3PM</ProfessorTime>
+    <ProfessorLocation>Coor Hall</ProfessorLocation>
+    <TAName>Joe</TAName>
+    <TATime>4PM-5PM</TATime>
+    <TALocation>Coor Hall</TALocation>
   </OfficeHour>
   <OfficeHour>
-    <ProfessorName>r</ProfessorName>
-    <ProfessorTime>5</ProfessorTime>
-    <ProfessorLocation>r</ProfessorLocation>
-    <TAName>g</TAName>
-    <TATime>2</TATime>
-    <TALocation>g</TALocation>
+    <ProfessorName>Feng</ProfessorName>
+    <ProfessorTime>10AM-11AM</ProfessorTime>
+    <ProfessorLocation>Coor Hall</ProfessorLocation>
+    <TAName>Max</TAName>
+    <TATime>4PM-5PM</TATime>
+    <TALocation>Coor Hall</TALocation>
   </OfficeHour>
   <OfficeHour>
-    <ProfessorName>gt</ProfessorName>
-    <ProfessorTime>7</ProfessorTime>
-    <ProfessorLocation>gg</ProfessorLocation>
-    <TAName>fe</TAName>
-    <TATime>9</TATime>
-    <TALocation>fw</TALocation>
+    <ProfessorName>XYZ</ProfessorName>
+    <ProfessorTime>10AM-11AM</ProfessorTime>
+    <ProfessorLocation>Coor Hall</ProfessorLocation>
+    <TAName>ABCTA</TAName>
+    <TATime>3PM-4PM</TATime>
+    <TALocation>Coor Hall</TALocation>
   </OfficeHour>
   <OfficeHour>
-    <ProfessorName>gt</ProfessorName>
-    <ProfessorTime>7</ProfessorTime>
-    <ProfessorLocation>gg</ProfessorLocation>
-    <TAName>fe</TAName>
-    <TATime>9</TATime>
-    <TALocation>fw</TALocation>
+    <ProfessorName>XYZ1</ProfessorName>
+    <ProfessorTime>10AM-11AM</ProfessorTime>
+    <ProfessorLocation>Coor Hall</ProfessorLocation>
+    <TAName>ABCTA1</TAName>
+    <TATime>3PM-4PM</TATime>
+    <TALocation>Coor Hall</TALocation>
   </OfficeHour>
   <OfficeHour>
-    <ProfessorName>gt</ProfessorName>
-    <ProfessorTime>7</ProfessorTime>
-    <ProfessorLocation>gg</ProfessorLocation>
-    <TAName>fe</TAName>
-    <TATime>98</TATime>
-    <TALocation>fw</TALocation>
+    <ProfessorName>Mueth</ProfessorName>
+    <ProfessorTime>10pm-11pm</ProfessorTime>
+    <ProfessorLocation>Tooker</ProfessorLocation>
+    <TAName>Harry</TAName>
+    <TATime>8pm-9pm</TATime>
+    <TALocation>Tooker</TALocation>
   </OfficeHour>
 </OfficeHours>

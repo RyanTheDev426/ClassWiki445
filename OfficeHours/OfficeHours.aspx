@@ -9,9 +9,7 @@
 <body>
     <div>
     Enter office hour information to save to a file.
-        <br />
-        url: http://webstrar9.fulton.asu.edu/page1/OfficeHoursService.asmx
-        <br />
+        <br />        
         <br />
 
     </div>

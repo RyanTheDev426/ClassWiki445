@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Classes>
+  <Class>
+    <Name>CSE445</Name>
+    <Professor>Chen</Professor>
+    <TAs>
+      <TA>Jiaxuan</TA>
+    </TAs>
+  </Class>
+  <Class>
+    <Name>CSE310</Name>
+    <Professor>Gordon</Professor>
+    <TAs>
+      <TA>Joe</TA>
+      <TA>Emily</TA>
+    </TAs>
+  </Class>
+  <Class>
+    <Name>CSE355</Name>
+    <Professor>Feng</Professor>
+    <TAs>
+      <TA>Max</TA>
+      <TA>Oscar</TA>
+    </TAs>
+  </Class>
+  <Class>
+    <Name>CSE110</Name>
+    <Professor>Mueth</Professor>
+    <TAs>
+      <TA>Harry</TA>
+    </TAs>
+  </Class>
+</Classes>

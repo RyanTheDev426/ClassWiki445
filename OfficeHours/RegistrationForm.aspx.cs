@@ -28,7 +28,7 @@ namespace OfficeHours
                 return; 
             }
 
-            string xmlPath = Server.MapPath("~/SecurityLib1/UserData.xml");
+            string xmlPath = Server.MapPath("~/App_Data/UserData.xml");
 
             //check if user already exists
             XmlDocument doc = new XmlDocument();
@@ -57,6 +57,8 @@ namespace OfficeHours
 
             lblMessage.ForeColor = System.Drawing.Color.Green;
             lblMessage.Text = "Registration successful";
+
+            Response.Redirect("~/LogInForm.aspx");
         }
     }
 }

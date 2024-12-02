@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="OfficeHours._Default" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="StaffPage.aspx.cs" Inherits="OfficeHours.StaffPage" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -17,6 +17,11 @@
                 </ItemTemplate>
             </asp:ListView>
        
+        </div>
+        <div class="row">
+            
+            <asp:Button ID="BtnAddClass" runat="server" Text="Add Class" OnClick="BtnAddClass_Click" />
+            
         </div>
     </main>
 

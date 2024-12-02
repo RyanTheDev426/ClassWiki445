@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using SecurityLib1;
+using System.Xml;
+using System.Web.Security;
 
 namespace OfficeHours
 {
@@ -13,6 +15,11 @@ namespace OfficeHours
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //if user is already authenticated, redirect to default page
+            if (User.Identity.IsAuthenticated) {
+
+                Response.Redirect("~/Default.aspx");
+            }
 
         }
 
@@ -20,16 +27,64 @@ namespace OfficeHours
         {
             if (UserCaptcha1.IsCaptchaValid())
             {
-                string xmlPath = Server.MapPath("~/SecurityLib1/UserData.xml");
+                string staffXmlPath = Server.MapPath("~/App_Data/Staff.xml");
+                string xmlPath = Server.MapPath("~/App_Data/UserData.xml");
+
+                if (File.Exists(staffXmlPath))
+                {
+                    var (isValid, userRole) = PasswordHasher.ValidateUserAndGetRole(txtUsername.Text, txtPassword.Text, staffXmlPath);
+                    if (isValid)
+                    {
+                        userRole = "Staff";
+                        FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
+                            1, txtUsername.Text.Trim(), DateTime.Now, DateTime.Now.AddMinutes(30), false, userRole
+                        );
+                        string encTicket = FormsAuthentication.Encrypt(ticket);
+
+                        HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
+
+                        Response.Cookies.Add(authCookie);
+
+                        Label3.Text = "Login successful!";
+
+                        Response.Redirect("~/StaffPage.aspx");
+                    }
+                }
 
                 if (File.Exists(xmlPath))
                 {
 
-                    bool isValid = PasswordHasher.ValidateUser(txtUsername.Text, txtPassword.Text, xmlPath);
+                    var (isValid, userRole) = PasswordHasher.ValidateUserAndGetRole(txtUsername.Text, txtPassword.Text, xmlPath);
 
                     if (isValid)
                     {
+
+                        //get user role
+                        //string userRole = GetUserRole(txtUsername.Text.Trim(), xmlPath);
+
+                        //create authentication ticket
+                        FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
+
+                            1, txtUsername.Text.Trim(), DateTime.Now, DateTime.Now.AddMinutes(30), false, userRole
+   
+                        );
+
+                        //encrypt the ticket and create the cookie
+                        string encTicket = FormsAuthentication.Encrypt(ticket);
+
+                        HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
+
+                        Response.Cookies.Add(authCookie);
+
                         Label3.Text = "Login successful!";
+                        
+                        //redirect to requested url or default page
+                        string returnUrl = Request.QueryString["ReturnUrl"];
+
+                        if (string.IsNullOrEmpty(returnUrl)) { returnUrl = "~/Default.aspx"; }
+
+                        Response.Redirect(returnUrl);
+                        
                     }
 
                     else
@@ -48,5 +103,46 @@ namespace OfficeHours
                 Label3.Text = "Invalid Captcha. Try Again.";
             }
         }
+
+        /*private string GetUserRole(string username, string xmlPath) {
+
+            try
+            {
+
+                XmlDocument doc = new XmlDocument();
+                doc.Load(xmlPath);
+
+                XmlNode userNode = doc.SelectSingleNode($"//User[Username='{username}']");
+                if (userNode != null)
+                {
+
+                    XmlNode roleNode = userNode.SelectSingleNode("Role");
+
+                    if (roleNode != null)
+                    {
+
+                        return roleNode.InnerText;
+                    }
+
+                    else {
+
+                        //if no role is specified add it
+                        XmlElement roleElement = doc.CreateElement("Role");
+                        roleElement.InnerText = "Member";
+                        userNode.AppendChild(roleElement);
+                        doc.Save(xmlPath);
+                        return "Member";
+
+                    }
+
+                }
+            }
+            catch (Exception ex) {
+            
+                System.Diagnostics.Debug.WriteLine($"Error getting user role: {ex.Message}");
+            }
+
+            return "Member";
+        }*/
     }
 }

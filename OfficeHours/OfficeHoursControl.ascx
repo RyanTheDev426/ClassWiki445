@@ -1,9 +1,12 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OfficeHoursControl.ascx.cs" Inherits="OfficeHours.WebUserControl1" %>
 
      <div>
-         <asp:Label ID="Label1" runat="server" Text="Add Office Hours" Font-Bold="True" Font-Italic="True" Font-Size="Large"></asp:Label>
+         <asp:Label ID="Label1" runat="server" Text="Add Class and Office Hours" Font-Bold="True" Font-Italic="True" Font-Size="Large"></asp:Label>
          <br />
          <br />
+         <asp:Label ID="Label10" runat="server" Text="Class" Width="150px"></asp:Label>&nbsp;
+         <asp:TextBox ID="txtClass" runat="server" Width="200px"></asp:TextBox>
+         <br /><br />
          <asp:Label ID="Label2" runat="server" Text="Professor Name" Width="150px"></asp:Label>
          &nbsp;
          <asp:TextBox ID="txtprofName" runat="server" Width="200px"></asp:TextBox>

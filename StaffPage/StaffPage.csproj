@@ -211,6 +211,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="ClassDetails.aspx.cs">
       <DependentUpon>ClassDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ClassDetails.aspx.designer.cs">
       <DependentUpon>ClassDetails.aspx</DependentUpon>
