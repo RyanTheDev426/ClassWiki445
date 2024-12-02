@@ -50,6 +50,8 @@ namespace TryitPageRating
                 Response.Cookies.Add(existingCookie);
             }
         }
+
+        
         protected void Button1_Click(object sender, EventArgs e) //Button for Difficulty Submission button.
         {
             string Rating = TextBox1.Text;
