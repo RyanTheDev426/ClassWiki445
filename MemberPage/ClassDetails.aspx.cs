@@ -13,6 +13,8 @@ namespace MemberPage
         private static double diffAvg = 0;
         private static double numUseReviews = 0;
         private static double useAvg = 0;
+        private static string name = "";
+        private static ClassDetails[] listofPages = null;
 
 
 
@@ -20,12 +22,18 @@ namespace MemberPage
         {
 
         }
-        public ClassDetails(double numDiff, double dAvg, double numUse, double uAvg)
+        public ClassDetails(double numDiff, double dAvg, double numUse, double uAvg, ClassDetails[] avgList)
         {
+
             numDiffReviews = numDiff;
             diffAvg = dAvg;
             numUseReviews = numUse;
             useAvg = uAvg;
+            listofPages = avgList;
+            for(int i = 0; i < listofPages.Length; i++)
+            {
+
+            }
         }
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -87,7 +95,7 @@ namespace MemberPage
                 return;
             }
 
-            RatingReference.Service1Client prxy = new RatingReference.Service1Client();
+            RatingReference1.Service1Client prxy = new RatingReference1.Service1Client();
             ratNum = prxy.GetRating(numDiffReviews, ratNum, diffAvg);
             diffAvg = Math.Round(ratNum, 2);
             numDiffReviews++;
@@ -111,7 +119,7 @@ namespace MemberPage
             }
 
 
-            RatingReference.Service1Client prxy = new RatingReference.Service1Client();
+            RatingReference1.Service1Client prxy = new RatingReference1.Service1Client();
             ratNum = prxy.GetRating(numUseReviews, ratNum, useAvg);
             useAvg = Math.Round(ratNum, 2);
             numUseReviews++;

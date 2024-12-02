@@ -15,6 +15,7 @@ namespace MemberPage
         private static double diffAvg = 0;
         private static double numUseReviews = 0;
         private static double useAvg = 0;
+        private static ClassDetails[] listofAvg = null;
         ClassDetails myDef;
         void Application_Start(object sender, EventArgs e)
         {
@@ -24,7 +25,7 @@ namespace MemberPage
         }
         protected void Session_Start(object sender, EventArgs e)
         {
-            myDef = new ClassDetails(numDiffReviews, diffAvg, numUseReviews, useAvg);
+            myDef = new ClassDetails(numDiffReviews, diffAvg, numUseReviews, useAvg, listofAvg);
         }
         protected void Session_End(object sender, EventArgs e)
         {

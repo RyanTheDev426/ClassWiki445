@@ -8,11 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MemberPage.RatingReference {
+namespace MemberPage.RatingReference1 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RatingReference.IService1")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="RatingReference1.IService1")]
     public interface IService1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
@@ -29,12 +29,12 @@ namespace MemberPage.RatingReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IService1Channel : MemberPage.RatingReference.IService1, System.ServiceModel.IClientChannel {
+    public interface IService1Channel : MemberPage.RatingReference1.IService1, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class Service1Client : System.ServiceModel.ClientBase<MemberPage.RatingReference.IService1>, MemberPage.RatingReference.IService1 {
+    public partial class Service1Client : System.ServiceModel.ClientBase<MemberPage.RatingReference1.IService1>, MemberPage.RatingReference1.IService1 {
         
         public Service1Client() {
         }

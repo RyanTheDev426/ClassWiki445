@@ -8,19 +8,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MemberPage.HoursReference {
+namespace MemberPage.HoursReference1 {
     
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="HoursReference.OfficeHoursServiceSoap")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="HoursReference1.OfficeHoursServiceSoap")]
     public interface OfficeHoursServiceSoap {
         
         // CODEGEN: Generating message contract since element name profName from namespace http://tempuri.org/ is not marked nillable
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddOfficeHours", ReplyAction="*")]
-        MemberPage.HoursReference.AddOfficeHoursResponse AddOfficeHours(MemberPage.HoursReference.AddOfficeHoursRequest request);
+        MemberPage.HoursReference1.AddOfficeHoursResponse AddOfficeHours(MemberPage.HoursReference1.AddOfficeHoursRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddOfficeHours", ReplyAction="*")]
-        System.Threading.Tasks.Task<MemberPage.HoursReference.AddOfficeHoursResponse> AddOfficeHoursAsync(MemberPage.HoursReference.AddOfficeHoursRequest request);
+        System.Threading.Tasks.Task<MemberPage.HoursReference1.AddOfficeHoursResponse> AddOfficeHoursAsync(MemberPage.HoursReference1.AddOfficeHoursRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -30,12 +30,12 @@ namespace MemberPage.HoursReference {
     public partial class AddOfficeHoursRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="AddOfficeHours", Namespace="http://tempuri.org/", Order=0)]
-        public MemberPage.HoursReference.AddOfficeHoursRequestBody Body;
+        public MemberPage.HoursReference1.AddOfficeHoursRequestBody Body;
         
         public AddOfficeHoursRequest() {
         }
         
-        public AddOfficeHoursRequest(MemberPage.HoursReference.AddOfficeHoursRequestBody Body) {
+        public AddOfficeHoursRequest(MemberPage.HoursReference1.AddOfficeHoursRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -84,12 +84,12 @@ namespace MemberPage.HoursReference {
     public partial class AddOfficeHoursResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="AddOfficeHoursResponse", Namespace="http://tempuri.org/", Order=0)]
-        public MemberPage.HoursReference.AddOfficeHoursResponseBody Body;
+        public MemberPage.HoursReference1.AddOfficeHoursResponseBody Body;
         
         public AddOfficeHoursResponse() {
         }
         
-        public AddOfficeHoursResponse(MemberPage.HoursReference.AddOfficeHoursResponseBody Body) {
+        public AddOfficeHoursResponse(MemberPage.HoursReference1.AddOfficeHoursResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -112,12 +112,12 @@ namespace MemberPage.HoursReference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface OfficeHoursServiceSoapChannel : MemberPage.HoursReference.OfficeHoursServiceSoap, System.ServiceModel.IClientChannel {
+    public interface OfficeHoursServiceSoapChannel : MemberPage.HoursReference1.OfficeHoursServiceSoap, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class OfficeHoursServiceSoapClient : System.ServiceModel.ClientBase<MemberPage.HoursReference.OfficeHoursServiceSoap>, MemberPage.HoursReference.OfficeHoursServiceSoap {
+    public partial class OfficeHoursServiceSoapClient : System.ServiceModel.ClientBase<MemberPage.HoursReference1.OfficeHoursServiceSoap>, MemberPage.HoursReference1.OfficeHoursServiceSoap {
         
         public OfficeHoursServiceSoapClient() {
         }
@@ -139,38 +139,38 @@ namespace MemberPage.HoursReference {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        MemberPage.HoursReference.AddOfficeHoursResponse MemberPage.HoursReference.OfficeHoursServiceSoap.AddOfficeHours(MemberPage.HoursReference.AddOfficeHoursRequest request) {
+        MemberPage.HoursReference1.AddOfficeHoursResponse MemberPage.HoursReference1.OfficeHoursServiceSoap.AddOfficeHours(MemberPage.HoursReference1.AddOfficeHoursRequest request) {
             return base.Channel.AddOfficeHours(request);
         }
         
         public string AddOfficeHours(string profName, string profTime, string profLocation, string taName, string taTime, string taLocation) {
-            MemberPage.HoursReference.AddOfficeHoursRequest inValue = new MemberPage.HoursReference.AddOfficeHoursRequest();
-            inValue.Body = new MemberPage.HoursReference.AddOfficeHoursRequestBody();
+            MemberPage.HoursReference1.AddOfficeHoursRequest inValue = new MemberPage.HoursReference1.AddOfficeHoursRequest();
+            inValue.Body = new MemberPage.HoursReference1.AddOfficeHoursRequestBody();
             inValue.Body.profName = profName;
             inValue.Body.profTime = profTime;
             inValue.Body.profLocation = profLocation;
             inValue.Body.taName = taName;
             inValue.Body.taTime = taTime;
             inValue.Body.taLocation = taLocation;
-            MemberPage.HoursReference.AddOfficeHoursResponse retVal = ((MemberPage.HoursReference.OfficeHoursServiceSoap)(this)).AddOfficeHours(inValue);
+            MemberPage.HoursReference1.AddOfficeHoursResponse retVal = ((MemberPage.HoursReference1.OfficeHoursServiceSoap)(this)).AddOfficeHours(inValue);
             return retVal.Body.AddOfficeHoursResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<MemberPage.HoursReference.AddOfficeHoursResponse> MemberPage.HoursReference.OfficeHoursServiceSoap.AddOfficeHoursAsync(MemberPage.HoursReference.AddOfficeHoursRequest request) {
+        System.Threading.Tasks.Task<MemberPage.HoursReference1.AddOfficeHoursResponse> MemberPage.HoursReference1.OfficeHoursServiceSoap.AddOfficeHoursAsync(MemberPage.HoursReference1.AddOfficeHoursRequest request) {
             return base.Channel.AddOfficeHoursAsync(request);
         }
         
-        public System.Threading.Tasks.Task<MemberPage.HoursReference.AddOfficeHoursResponse> AddOfficeHoursAsync(string profName, string profTime, string profLocation, string taName, string taTime, string taLocation) {
-            MemberPage.HoursReference.AddOfficeHoursRequest inValue = new MemberPage.HoursReference.AddOfficeHoursRequest();
-            inValue.Body = new MemberPage.HoursReference.AddOfficeHoursRequestBody();
+        public System.Threading.Tasks.Task<MemberPage.HoursReference1.AddOfficeHoursResponse> AddOfficeHoursAsync(string profName, string profTime, string profLocation, string taName, string taTime, string taLocation) {
+            MemberPage.HoursReference1.AddOfficeHoursRequest inValue = new MemberPage.HoursReference1.AddOfficeHoursRequest();
+            inValue.Body = new MemberPage.HoursReference1.AddOfficeHoursRequestBody();
             inValue.Body.profName = profName;
             inValue.Body.profTime = profTime;
             inValue.Body.profLocation = profLocation;
             inValue.Body.taName = taName;
             inValue.Body.taTime = taTime;
             inValue.Body.taLocation = taLocation;
-            return ((MemberPage.HoursReference.OfficeHoursServiceSoap)(this)).AddOfficeHoursAsync(inValue);
+            return ((MemberPage.HoursReference1.OfficeHoursServiceSoap)(this)).AddOfficeHoursAsync(inValue);
         }
     }
 }
