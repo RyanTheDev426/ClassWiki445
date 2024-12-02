@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -27,46 +28,106 @@ namespace SecurityLib1
 
                     builder.Append(data[i].ToString("x2"));
                 }
-
-                return builder.ToString();
+                string hash = builder.ToString();
+                Debug.WriteLine($"Input: {input}, Hash: {hash}");
+                return hash;
+                //return builder.ToString();
 
             }
 
         }
 
         //validate credentials and return role
-        public static (bool isValid, string role) ValidateUserAndGetRole(string username, string password, string xmlPath) {
+        public static (bool isValid, string role) ValidateUserAndGetRole(string username, string password, string userXmlPath, string staffXmlPath) {
 
             try
             {
-
-                //hash input
                 string hashedPassword = HashString(password);
+                //debug
+                Debug.WriteLine($"Validating user: {username}");
+                Debug.WriteLine($"Staff XML path: {staffXmlPath}");
+                Debug.WriteLine($"User XML path: {userXmlPath}");
+                Debug.WriteLine($"Generated hash: {hashedPassword}");
 
-                //load xml file
-                XDocument doc = XDocument.Load(xmlPath);
-
-                //find user to match user/pass
-                var user = doc.Descendants("User").FirstOrDefault(u => u.Element("Username")?.Value == username && u.Element("Password")?.Value == hashedPassword);
-
-                if (user != null)
+                //check staff.xml
+                if (System.IO.File.Exists(staffXmlPath))
                 {
 
-                    //get role, default to member if not found
-                    string role = user.Element("Role")?.Value ?? "Member";
-                    return (true, role);
+                    XDocument staffDoc = XDocument.Load(staffXmlPath);
+                    var staffUser = staffDoc.Descendants("User").FirstOrDefault(u => u.Element("Username")?.Value == username && u.Element("Password")?.Value == hashedPassword);
+
+                    if (staffUser != null)
+                    {
+                        string storedHash = staffUser.Element("Password")?.Value;
+                        Debug.WriteLine($"Found staff user. Stored hash: {storedHash}");
+                        if (storedHash == hashedPassword)
+                            return (true, "Staff");
+                    }
 
                 }
-                return (false, null);
+                else { Debug.WriteLine("Staff XML file not found"); }
 
+                //check UserData.xml
+                if (System.IO.File.Exists(userXmlPath))
+                {
+                    XDocument userDoc = XDocument.Load(userXmlPath);
+
+                    var user = userDoc.Descendants("User").FirstOrDefault(u => u.Element("Username")?.Value == username && u.Element("Password")?.Value == hashedPassword);
+
+                    if (user != null)
+                    {
+                        string storedHash = user.Element("Password")?.Value;
+                        Debug.WriteLine($"Found member user. Stored hash: {storedHash}");
+                        if (storedHash == hashedPassword)
+                            return (true, "Member");
+                    }
+
+                }
+                else { Debug.WriteLine("User XML file not found"); }
+
+                Debug.WriteLine("No matching user found");
+                return (false, null);
+            }
+
+            catch (Exception ex) {
+
+                Debug.WriteLine($"Error in validation: {ex.Message}");
+                return (false, null); }
+        
+        }
+
+        public static bool AddUser(string username, string password, string role, string xmlPath) {
+
+            try {
+
+                string hashedPassword = HashString(password);
+                XDocument doc;
+
+                if (System.IO.File.Exists(xmlPath))
+                    doc = XDocument.Load(xmlPath);
+                else
+                    doc = new XDocument(new XElement("Users"));
+
+                bool userExists = doc.Descendants("User").Any(u => u.Element("Username")?.Value == username);
+
+                if (userExists)  return false;
+
+                var newUser = new XElement("User",
+                    new XElement("Username", username),
+                    new XElement("Password", hashedPassword));
+
+                doc.Element("Users").Add(newUser);
+                doc.Save(xmlPath);
+                return true;
 
             }
-            catch (Exception ex) { return (false, null); }
+            catch (Exception) { return false; }
+        
         
         }
 
         //validate credentials
-        public static bool ValidateUser(string username, string password, string xmlPath) {
+        /*public static bool ValidateUser(string username, string password, string xmlPath) {
         
             
             var(isValid, _) = ValidateUserAndGetRole(username, password, xmlPath);

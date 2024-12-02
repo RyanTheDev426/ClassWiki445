@@ -259,6 +259,7 @@
     </Compile>
     <Compile Include="StaffPage.aspx.cs">
       <DependentUpon>StaffPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="StaffPage.aspx.designer.cs">
       <DependentUpon>StaffPage.aspx</DependentUpon>

@@ -23,16 +23,73 @@ namespace OfficeHours
 
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void btnLogin_Click(object sender, EventArgs e) {
+
+            if (UserCaptcha1.IsCaptchaValid())
+            {
+
+                string staffXmlPath = Server.MapPath("~/App_Data/Staff.xml");
+                string userXmlPath = Server.MapPath("~/App_Data/UserData.xml");
+
+                var (isValid, userRole) = PasswordHasher.ValidateUserAndGetRole(
+                    txtUsername.Text,
+                    txtPassword.Text,
+                    userXmlPath,
+                    staffXmlPath
+                );
+
+                if (isValid)
+                {
+
+                    FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
+
+                        1, txtUsername.Text.Trim(), DateTime.Now, DateTime.Now.AddMinutes(30), false, userRole
+                    );
+
+                    string encTicket = FormsAuthentication.Encrypt(ticket);
+
+                    HttpCookie authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
+
+                    Response.Cookies.Add(authCookie);
+
+                    Label3.Text = "Login successful";
+
+                    if (userRole == "Staff")
+                        Response.Redirect("~/StaffPage.aspx");
+                    else
+                        Response.Redirect("~/Default.aspx");
+                }
+
+                else
+                {
+
+                    Label3.Text = "Invalid username or password";
+                }
+            }
+
+            else {
+
+                Label3.Text = "Invalid Captcha. Try Again.";
+
+            }
+        }
+
+        protected void btnRegister_Click(object sender, EventArgs e) {
+
+            Response.Redirect("~/RegistrationForm.aspx");
+        }
+
+        /*protected void btnLogin_Click(object sender, EventArgs e)
         {
             if (UserCaptcha1.IsCaptchaValid())
             {
                 string staffXmlPath = Server.MapPath("~/App_Data/Staff.xml");
-                string xmlPath = Server.MapPath("~/App_Data/UserData.xml");
+                string userXmlPath = Server.MapPath("~/App_Data/UserData.xml");
 
                 if (File.Exists(staffXmlPath))
                 {
                     var (isValid, userRole) = PasswordHasher.ValidateUserAndGetRole(txtUsername.Text, txtPassword.Text, staffXmlPath);
+                    
                     if (isValid)
                     {
                         userRole = "Staff";
@@ -102,7 +159,7 @@ namespace OfficeHours
             {
                 Label3.Text = "Invalid Captcha. Try Again.";
             }
-        }
+        }*/
 
         /*private string GetUserRole(string username, string xmlPath) {
 

@@ -19,6 +19,8 @@
             <br />
             <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
             <br />
+            <asp:Button ID="btnRegister" runat="server" Text="Register" OnClick="btnRegister_Click" />
+            <br />
             <asp:Label ID="Label3" runat="server" Text="" Width="200px"></asp:Label>
         </div>
     </form>

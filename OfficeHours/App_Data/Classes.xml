@@ -30,4 +30,11 @@
       <TA>Harry</TA>
     </TAs>
   </Class>
+  <Class>
+    <Name>sce3</Name>
+    <Professor>3</Professor>
+    <TAs>
+      <TA>3</TA>
+    </TAs>
+  </Class>
 </Classes>
