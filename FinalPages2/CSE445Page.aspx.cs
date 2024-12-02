@@ -10,7 +10,7 @@ namespace FinalPages2
 {
     public partial class CSE445Page : System.Web.UI.Page
     {
-        private static double numDiffReviews = 0;
+        /*private static double numDiffReviews = 0;
         private static double diffAvg = 0;
         private static double numUseReviews = 0;
         private static double useAvg = 0;
@@ -137,6 +137,6 @@ namespace FinalPages2
             revList[2] = numUseReviews;
             revList[3] = useAvg;
             return revList;
-        }
+        }*/
     }
 }

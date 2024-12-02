@@ -98,12 +98,26 @@
     <Content Include="App_Data\Staff.xml" />
     <Content Include="App_Data\UserData.xml" />
     <Content Include="ClassDetails.aspx" />
+    <Content Include="Connected Services\RatingReference\OfficeHours.RatingReference.AddRatingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\RatingReference\OfficeHours.RatingReference.GetRatingResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\RatingReference\RatingService.disco" />
+    <None Include="Connected Services\RatingReference\configuration91.svcinfo" />
+    <None Include="Connected Services\RatingReference\configuration.svcinfo" />
+    <None Include="Connected Services\RatingReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Connected Services\ServiceReference1\OfficeHours.ServiceReference1.AddOfficeHoursResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Connected Services\ServiceReference1\OfficeHours.ServiceReference1.GetOfficeHoursResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\RatingReference\RatingService.wsdl" />
     <None Include="Connected Services\ServiceReference1\OfficeHoursService.disco" />
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
@@ -192,6 +206,11 @@
       <DependentUpon>ClassDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClassDetails.aspx.designer.cs" />
+    <Compile Include="Connected Services\RatingReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -324,6 +343,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\RatingReference\" />
     <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
   </ItemGroup>
   <PropertyGroup>

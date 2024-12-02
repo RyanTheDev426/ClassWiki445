@@ -51,12 +51,46 @@ namespace OfficeHours
                     string taHours = officeHourNode.SelectSingleNode("TATime").InnerText;
                     LabelOfficeHours.Text = profHours;
                     LabelTAHours.Text = taHours;
-                    
+
+                    RatingReference.RatingServiceSoapClient ratingClient = new RatingReference.RatingServiceSoapClient();
+                    string ratingsXml = ratingClient.GetRating(name);
+                    XmlDocument ratingsDoc = new XmlDocument();
+                    ratingsDoc.LoadXml(ratingsXml);
+                    XmlNode ratingsNode = ratingsDoc.DocumentElement;
+
+                    string diffRating = ratingsNode.SelectSingleNode("DiffRating").InnerText;
+                    string numDiffRating = ratingsNode.SelectSingleNode("numDiffRatings").InnerText;
+                    string useRating = ratingsNode.SelectSingleNode("UseRating").InnerText;
+                    string numUseRating = ratingsNode.SelectSingleNode("numUseRatings").InnerText;
+
+                    LabelDRating.Text = "Difficulty Rating: " + diffRating;
+                    LabelNumDRatings.Text = "# of Difficulty Reviews: " + numDiffRating;
+                    LabelURating.Text = "Usefulness Rating: " + useRating;
+                    LabelNumURatings.Text = "# of Usefulness Reviews: " + numUseRating;
+
                 }
                 else
                 {
                 }
             }
+        }
+
+        protected void ButtonDiffInsert_Click(object sender, EventArgs e)
+        {
+            string difficultyInput = txtDiffRating.Text;
+            txtDiffRating.Text = "";
+            RatingReference.RatingServiceSoapClient ratingClient = new RatingReference.RatingServiceSoapClient();
+            ratingClient.AddRating(Convert.ToDouble(difficultyInput), LabelClass.Text, true, true);
+            LabelDButtonConfirm.Text = "Rating Added!";
+        }
+
+        protected void ButtonUseInsert_Click(object sender, EventArgs e)
+        {
+            string usefulnessInput = txtUseRating.Text;
+            txtUseRating.Text = "";
+            RatingReference.RatingServiceSoapClient ratingClient = new RatingReference.RatingServiceSoapClient();
+            ratingClient.AddRating(Convert.ToDouble(usefulnessInput), LabelClass.Text, true, false);
+            LabelUButtonConfirm.Text = "Rating Added!";
         }
     }
 }

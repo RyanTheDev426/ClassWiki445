@@ -14,11 +14,30 @@
         <br />
         <asp:Label ID="LabelClass" runat="server" Text=""></asp:Label>
         <h3>
-            Overall Rating:
+            Overall Ratings:
         </h3>
         <br />
-        <asp:Label ID="LabelRating" runat="server" Text=""></asp:Label>
+        <asp:Label ID="LabelDRating" runat="server" Text=""></asp:Label>
         <br /> 
+        <asp:Label ID="LabelNumDRatings" runat="server" Text=""></asp:Label>
+        <br />
+        <asp:Label ID="LabelURating" runat="server" Text=""></asp:Label>
+        <br />
+        <asp:Label ID="LabelNumURatings" runat="server" Text=""></asp:Label>
+        <br />
+        <asp:Label ID="LabelAskingForReview" runat="server" Text="Want to add a Review? Rate the class out of 5 below!"></asp:Label> <!-- not meant to be changed -->
+        <br />
+        <asp:Label ID="LabelDiffPrompt" runat="server" Text="Rate on Difficulty:"></asp:Label> <!-- not meant to be changed -->
+        <asp:TextBox ID="txtDiffRating" runat="server" />
+        <asp:Button ID = "ButtonDiffInsert" runat ="server" Text="Submit Rating" OnClick="ButtonDiffInsert_Click"></asp:Button>
+        <asp:Label ID="LabelDButtonConfirm" runat="server" Text=""></asp:Label>
+        <br />
+        <asp:Label ID="LabelUsePrompt" runat="server" Text="Rate on Usefulness:"></asp:Label> <!-- not meant to be changed -->
+        <asp:TextBox ID="txtUseRating" runat="server" />
+        <asp:Button ID = "ButtonUseInsert" runat ="server" Text="Submit Rating" OnClick="ButtonUseInsert_Click"></asp:Button>
+        <asp:Label ID="LabelUButtonConfirm" runat="server" Text=""></asp:Label>
+        <br />
+        <br />
         Professor: <asp:Label ID="LabelProf" runat="server" Text=""></asp:Label>
         <br />
         TA(s): <asp:Label ID="LabelTAs" runat="server" Text=""></asp:Label>

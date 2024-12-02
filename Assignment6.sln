@@ -13,6 +13,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeHoursService", "OfficeHoursService\OfficeHoursService.csproj", "{77618A5D-8741-498A-A465-3E66C80A6A61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeHours", "OfficeHours\OfficeHours.csproj", "{D501E90D-D958-45F6-BC65-FB8E7BDE64BB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C7D7DB1D-8AC1-4DDF-83CF-3C006C0AA5D9} = {C7D7DB1D-8AC1-4DDF-83CF-3C006C0AA5D9}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comments", "Comments\Comments.csproj", "{8915060D-F7AB-41A9-826F-8D4410DD1073}"
 EndProject
