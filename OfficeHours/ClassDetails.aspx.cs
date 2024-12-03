@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Xml;
@@ -72,6 +73,8 @@ namespace OfficeHours
                 else
                 {
                 }
+                
+                LoadComments();
             }
         }
 
@@ -91,6 +94,47 @@ namespace OfficeHours
             RatingReference.RatingServiceSoapClient ratingClient = new RatingReference.RatingServiceSoapClient();
             ratingClient.AddRating(Convert.ToDouble(usefulnessInput), LabelClass.Text, true, false);
             LabelUButtonConfirm.Text = "Rating Added!";
+        }
+
+        private void LoadComments() {
+
+            CommentsReference.CommentsServiceSoapClient client =
+                new CommentsReference.CommentsServiceSoapClient();
+            var comments = client.GetComments(LabelClass.Text);
+            CommentsGrid.DataSource = comments;
+            CommentsGrid.DataBind();
+
+        }
+
+        protected void btnAddComment_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(CommentText.Text))
+            {
+                if (Request.Cookies[FormsAuthentication.FormsCookieName] != null)
+                {
+                    //Get username from authentication ticket
+                    var authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+                    var ticket = FormsAuthentication.Decrypt(authCookie.Value);
+                    string username = ticket.Name;
+
+                    CommentsReference.CommentsServiceSoapClient client =
+                        new CommentsReference.CommentsServiceSoapClient();
+
+                    client.AddComment(
+                        LabelClass.Text,
+                        username,  //Use the username from the ticket
+                        CommentText.Text
+                    );
+
+                    CommentText.Text = string.Empty;
+                    LabelCommentConfirm.Text = "Comment Added!";
+                    LoadComments();
+                }
+                else
+                {
+                    LabelCommentConfirm.Text = "Please log in to add comments.";
+                }
+            }
         }
     }
 }

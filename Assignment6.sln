@@ -14,6 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeHoursService", "Offic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OfficeHours", "OfficeHours\OfficeHours.csproj", "{D501E90D-D958-45F6-BC65-FB8E7BDE64BB}"
 	ProjectSection(ProjectDependencies) = postProject
+		{04E17F15-53DF-409C-9BA1-32F99651DEFD} = {04E17F15-53DF-409C-9BA1-32F99651DEFD}
 		{C7D7DB1D-8AC1-4DDF-83CF-3C006C0AA5D9} = {C7D7DB1D-8AC1-4DDF-83CF-3C006C0AA5D9}
 	EndProjectSection
 EndProject
@@ -31,6 +32,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalPages2", "FinalPages2\
 		{77618A5D-8741-498A-A465-3E66C80A6A61} = {77618A5D-8741-498A-A465-3E66C80A6A61}
 		{C7D7DB1D-8AC1-4DDF-83CF-3C006C0AA5D9} = {C7D7DB1D-8AC1-4DDF-83CF-3C006C0AA5D9}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comments1", "Comments1\Comments1.csproj", "{04E17F15-53DF-409C-9BA1-32F99651DEFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -70,6 +73,10 @@ Global
 		{17515ECD-0062-4D9C-825B-ACA07F175B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17515ECD-0062-4D9C-825B-ACA07F175B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17515ECD-0062-4D9C-825B-ACA07F175B16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E17F15-53DF-409C-9BA1-32F99651DEFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E17F15-53DF-409C-9BA1-32F99651DEFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E17F15-53DF-409C-9BA1-32F99651DEFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E17F15-53DF-409C-9BA1-32F99651DEFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

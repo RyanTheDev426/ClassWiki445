@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Comments>
+  <Comment>
+    <ClassID>CSE445</ClassID>
+    <Username>Student1</Username>
+    <Content>This class is hard</Content>
+    <Timestamp>2024-12-01T10:30:00</Timestamp>
+  </Comment>
+  <Comment>
+    <ClassID>CSE445</ClassID>
+    <Username>
+    </Username>
+    <Content>test test is this thing on?</Content>
+    <Timestamp>2024-12-02T19:46:19.5832213-07:00</Timestamp>
+  </Comment>
+  <Comment>
+    <ClassID>CSE445</ClassID>
+    <Username>
+    </Username>
+    <Content>hola</Content>
+    <Timestamp>2024-12-02T19:49:28.4196223-07:00</Timestamp>
+  </Comment>
+  <Comment>
+    <ClassID>CSE310</ClassID>
+    <Username>
+    </Username>
+    <Content>i love comments</Content>
+    <Timestamp>2024-12-02T19:49:45.8956334-07:00</Timestamp>
+  </Comment>
+  <Comment>
+    <ClassID>CSE445</ClassID>
+    <Username>member1</Username>
+    <Content>hola hola</Content>
+    <Timestamp>2024-12-02T19:55:01.0402270-07:00</Timestamp>
+  </Comment>
+</Comments>

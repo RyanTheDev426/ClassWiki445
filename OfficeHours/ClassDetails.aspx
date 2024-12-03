@@ -49,7 +49,22 @@
         <br />
         Comments: 
         <br />
+        <div class="comments-section">
+            <asp:GridView ID="CommentsGrid" runat="server" AutoGenerateColumns="False" Width="100%">
+                <Columns>
+                    <asp:BoundField DataField="Username" HeaderText="Username" />
+                    <asp:BoundField DataField="Content" HeaderText="Comment" />
+                    <asp:BoundField DataField="Timestamp" HeaderText="Date Posted" DataFormatString="{0:g}" />
+                </Columns>
+            </asp:GridView>
 
+            <div style="margin-top: 20px;">
+                <asp:TextBox ID="CommentText" runat="server" TextMode="MultiLine" Rows="3" Width="100%"></asp:TextBox>
+                <br />
+                <asp:Button ID="btnAddComment" runat="server" Text="Add Comment" OnClick="btnAddComment_Click" />
+                <asp:Label ID="LabelCommentConfirm" runat="server" Text=""></asp:Label>
+            </div>
+        </div>
     </form>
 </body>
 </html>
