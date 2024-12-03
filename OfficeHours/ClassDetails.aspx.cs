@@ -53,18 +53,19 @@ namespace OfficeHours
                     LabelOfficeHours.Text = profHours;
                     LabelTAHours.Text = taHours;
 
+                    //Call web service, process the response and display the ratings.
                     RatingReference.RatingServiceSoapClient ratingClient = new RatingReference.RatingServiceSoapClient();
                     string ratingsXml = ratingClient.GetRating(name);
                     XmlDocument ratingsDoc = new XmlDocument();
                     ratingsDoc.LoadXml(ratingsXml);
                     XmlNode ratingsNode = ratingsDoc.DocumentElement;
 
-                    string diffRating = ratingsNode.SelectSingleNode("DiffRating").InnerText;
+                    string diffRating = ratingsNode.SelectSingleNode("DiffRating").InnerText; //Getting all of the rating values
                     string numDiffRating = ratingsNode.SelectSingleNode("numDiffRatings").InnerText;
                     string useRating = ratingsNode.SelectSingleNode("UseRating").InnerText;
                     string numUseRating = ratingsNode.SelectSingleNode("numUseRatings").InnerText;
 
-                    LabelDRating.Text = "Difficulty Rating: " + diffRating;
+                    LabelDRating.Text = "Difficulty Rating: " + diffRating; //Putting the rating values into the labels.
                     LabelNumDRatings.Text = "# of Difficulty Reviews: " + numDiffRating;
                     LabelURating.Text = "Usefulness Rating: " + useRating;
                     LabelNumURatings.Text = "# of Usefulness Reviews: " + numUseRating;
@@ -78,7 +79,7 @@ namespace OfficeHours
             }
         }
 
-        protected void ButtonDiffInsert_Click(object sender, EventArgs e)
+        protected void ButtonDiffInsert_Click(object sender, EventArgs e) //Response button for if a difficulty rating is submitted
         {
             string difficultyInput = txtDiffRating.Text;
             txtDiffRating.Text = "";
@@ -87,7 +88,7 @@ namespace OfficeHours
             LabelDButtonConfirm.Text = "Rating Added!";
         }
 
-        protected void ButtonUseInsert_Click(object sender, EventArgs e)
+        protected void ButtonUseInsert_Click(object sender, EventArgs e) //Response button for if a usefulness rating is submitted
         {
             string usefulnessInput = txtUseRating.Text;
             txtUseRating.Text = "";

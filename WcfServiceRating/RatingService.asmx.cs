@@ -18,7 +18,7 @@ namespace WcfServiceRating
     public class RatingService : System.Web.Services.WebService
     {
         [WebMethod]
-        public String GetRating(string className)
+        public String GetRating(string className) //Gets the current ratings for a class, and if they don't exist, makes a default page for them.
         {
             XmlDocument doc = new XmlDocument();
             string filePath = Server.MapPath("~/App_Data/classRatings.xml");
@@ -33,7 +33,7 @@ namespace WcfServiceRating
             XmlElement rootNode = doc.DocumentElement;
 
             XmlNode targetClassNode = rootNode.SelectSingleNode($"Ratings[ClassName='{className}']");
-            if (targetClassNode == null)
+            if (targetClassNode == null) //Making the class page, should it not exist.
             {
                 // Add a new Ratings entry if not found
                 XmlElement newEntry = doc.CreateElement("Ratings");
@@ -68,7 +68,7 @@ namespace WcfServiceRating
         }
 
         [WebMethod]
-        public void AddRating(double rating, string className, bool hasRatings, bool diffRating)
+        public void AddRating(double rating, string className, bool hasRatings, bool diffRating) //Adds ratings to the classRatings.xml file located in App_Data
         {
             if (rating < 0 || rating > 5)
             {
@@ -120,7 +120,7 @@ namespace WcfServiceRating
             else
             {
                 // Update existing entry
-                if (diffRating)
+                if (diffRating) //Depending on if it's a difficulty rating or a usefulness rating, it adds to the current whole and finds the average.
                 {
                     XmlElement numDiffRatings = (XmlElement)targetClassNode.SelectSingleNode("numDiffRatings");
                     XmlElement diffEntry = (XmlElement)targetClassNode.SelectSingleNode("DiffRating");
