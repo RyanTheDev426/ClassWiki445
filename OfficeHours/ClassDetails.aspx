@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClassDetails.aspx.cs" Inherits="OfficeHours.ClassDetails" %>
+﻿<!-- written by chaitra daggubati -->
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ClassDetails.aspx.cs" Inherits="OfficeHours.ClassDetails" %>
 
 <!DOCTYPE html>
 

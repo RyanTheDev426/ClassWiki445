@@ -1,4 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OfficeHoursControl.ascx.cs" Inherits="OfficeHours.WebUserControl1" %>
+﻿<!-- written by chaitra daggubati -->
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="OfficeHoursControl.ascx.cs" Inherits="OfficeHours.WebUserControl1" %>
 
      <div>
          <asp:Label ID="Label1" runat="server" Text="Add Class and Office Hours" Font-Bold="True" Font-Italic="True" Font-Size="Large"></asp:Label>

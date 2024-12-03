@@ -1,4 +1,5 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserCaptcha.ascx.cs" Inherits="OfficeHours.UserCaptcha" %>
+﻿<!-- written by chaitra daggubati -->
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserCaptcha.ascx.cs" Inherits="OfficeHours.UserCaptcha" %>
 <div>
     <asp:Label ID="lblQuestion" runat="server" Text=""></asp:Label>
     <br />
