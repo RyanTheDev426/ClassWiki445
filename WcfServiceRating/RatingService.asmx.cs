@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Written by Ryan Orth
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace WcfServiceRating
     public class RatingService : System.Web.Services.WebService
     {
         [WebMethod]
-        public String GetRating(string className) //Gets the current ratings for a class, and if they don't exist, makes a default page for them.
+        public String GetRating(string className) //Gets the current ratings for a class, and if they don't exist, makes a default page for them. (Written by Ryan Orth)
         {
             XmlDocument doc = new XmlDocument();
             string filePath = Server.MapPath("~/App_Data/classRatings.xml");
@@ -68,7 +69,7 @@ namespace WcfServiceRating
         }
 
         [WebMethod]
-        public void AddRating(double rating, string className, bool hasRatings, bool diffRating) //Adds ratings to the classRatings.xml file located in App_Data
+        public void AddRating(double rating, string className, bool hasRatings, bool diffRating) //Adds ratings to the classRatings.xml file located in App_Data (Written by Ryan Orth)
         {
             if (rating < 0 || rating > 5)
             {

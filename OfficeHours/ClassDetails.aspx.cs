@@ -14,7 +14,7 @@ namespace OfficeHours
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (!IsPostBack) 
             {
                 string className = Request.QueryString["class"];
                 XmlDocument xmlDoc = new XmlDocument();
@@ -52,10 +52,10 @@ namespace OfficeHours
                     string profHours = officeHourNode.SelectSingleNode("ProfessorTime").InnerText;
                     string taHours = officeHourNode.SelectSingleNode("TATime").InnerText;
                     LabelOfficeHours.Text = profHours;
-                    LabelTAHours.Text = taHours;
+                    LabelTAHours.Text = taHours; 
 
                     //Call web service, process the response and display the ratings.
-                    RatingReference.RatingServiceSoapClient ratingClient = new RatingReference.RatingServiceSoapClient();
+                    RatingReference.RatingServiceSoapClient ratingClient = new RatingReference.RatingServiceSoapClient(); //Ryan Start
                     string ratingsXml = ratingClient.GetRating(name);
                     XmlDocument ratingsDoc = new XmlDocument();
                     ratingsDoc.LoadXml(ratingsXml);
@@ -69,7 +69,7 @@ namespace OfficeHours
                     LabelDRating.Text = "Difficulty Rating: " + diffRating; //Putting the rating values into the labels.
                     LabelNumDRatings.Text = "# of Difficulty Reviews: " + numDiffRating;
                     LabelURating.Text = "Usefulness Rating: " + useRating;
-                    LabelNumURatings.Text = "# of Usefulness Reviews: " + numUseRating;
+                    LabelNumURatings.Text = "# of Usefulness Reviews: " + numUseRating; //Ryan End
 
                 }
                 else
@@ -80,7 +80,7 @@ namespace OfficeHours
             }
         }
 
-        protected void ButtonDiffInsert_Click(object sender, EventArgs e) //Response button for if a difficulty rating is submitted
+        protected void ButtonDiffInsert_Click(object sender, EventArgs e) //Response button for if a difficulty rating is submitted (Written by Ryan Orth)
         {
             string difficultyInput = txtDiffRating.Text;
             txtDiffRating.Text = "";
@@ -89,7 +89,7 @@ namespace OfficeHours
             LabelDButtonConfirm.Text = "Rating Added!";
         }
 
-        protected void ButtonUseInsert_Click(object sender, EventArgs e) //Response button for if a usefulness rating is submitted
+        protected void ButtonUseInsert_Click(object sender, EventArgs e) //Response button for if a usefulness rating is submitted (Written by Ryan Orth)
         {
             string usefulnessInput = txtUseRating.Text;
             txtUseRating.Text = "";
